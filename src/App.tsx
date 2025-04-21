@@ -1,13 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {useRoutes } from 'react-router-dom'
-import routes from './routes'
-import MainLayout from './components/main-layout';
+import { routes } from './config/routes'
 
 function App() {
-  
   return (
     <>
-      <MainLayout />
-      {useRoutes(routes)}
+      {useRoutes([...routes])}
     </>
   );
 }
