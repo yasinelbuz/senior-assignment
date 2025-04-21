@@ -1,9 +1,13 @@
-// ./routes.js
+import HomePage from '../pages/home';
 
+// Route tanımlamaları
 const routes = [
 	{
-		path: "/",
-		element: <>Home</>,
+		name: 'home',
+		path: '/',
+		element: <HomePage />,
+		permissions: ['public'],
+		translations: () => Promise.resolve({})
 	},
 ];
 

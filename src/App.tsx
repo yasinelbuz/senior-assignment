@@ -1,11 +1,15 @@
 import {useRoutes } from 'react-router-dom'
 import routes from './routes'
+import MainLayout from './components/main-layout';
 
 function App() {
-
+  
   return (
-    <>{useRoutes(routes)}</>
-  )
+    <>
+      <MainLayout />
+      {useRoutes(routes)}
+    </>
+  );
 }
 
 export default App
