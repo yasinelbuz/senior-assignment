@@ -1,11 +1,10 @@
 import Header from './header'
-import { Outlet } from 'react-router-dom'
 
-export default function MainLayout() {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className='flex flex-col'>
-    <Header />
-    <Outlet />
+      <Header />
+      {children}
     </div>
   )
 }
