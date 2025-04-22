@@ -22,12 +22,12 @@ export default function LoginPage() {
                 await login();
                 nav.home.go(navigate)();
             } catch (error) {
-                console.error('Giriş işlemi başarısız:', error);
+                console.error('Login failed:', error);
             }
         }}
       className="cursor-pointer px-8 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
     >
-      Giriş Yap
+      Login
     </button>
   </div>
   )
