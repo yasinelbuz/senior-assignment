@@ -59,7 +59,6 @@ export const useNav = () => {
         const hasPermission = !route.permissions || route.permissions.every((p) => USER.permissions.includes(p));
 
         if (!hasPermission) {
-          alert('You don\'t have permission to access this page.');
           navigate('/403');
           return;
         }
