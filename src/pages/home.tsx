@@ -4,21 +4,18 @@ import { useGetPosts } from "../services/posts";
 import { Comment } from "../types/comments";
 import { Post } from "../types/posts";
 
+const payload = {
+  limit: 5,
+}
+
+
 export default function HomePage() {
 
-    const { data: posts, isLoading:postsLoading, error:postsError } = useGetPosts();
-    const { data: comments, isLoading:commentsLoading, error:commentsError } = useGetAllComments();
+    const { data: posts, isLoading:postsLoading } = useGetPosts(payload);
+    const { data: comments, isLoading:commentsLoading } = useGetAllComments();
 
     if (postsLoading || commentsLoading) {
         return <Loading />;
-    }
-
-    if (postsError) {
-        return <div>Error: {postsError.message}</div>;
-    }
-
-    if (commentsError) {
-        return <div>Error: {commentsError.message}</div>;
     }
 
   return (
@@ -39,6 +36,7 @@ export default function HomePage() {
             <div key={comment.id} className="mb-4">
                 <h3 className="text-lg font-bold text-gray-800">{index + 1} - {comment.name}</h3>
                 <p className="text-gray-600">{comment.body}</p>
+                
             </div>
         ))}
       </div>
