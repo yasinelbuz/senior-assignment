@@ -5,4 +5,10 @@ export interface Post {
     body: string;
 }
 
+export type PostWithoutUserId = Omit<Post, 'id'>;
+
+export type PayloadType = {
+    limit: number;
+}
+
 export type PostsResponse = Post[];
